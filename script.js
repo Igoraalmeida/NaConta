@@ -31,3 +31,27 @@ function listarExtrato(){
 }
 
 listarExtrato();
+
+function calcularSaldoAtual(){
+     const saldoTotal = historicoTransacoes.reduce((acumulador, transacao) => {
+        return acumulador + transacao.valor;
+     }, 0);
+
+     console.log("-----------------")
+     console.log(`Saldo Atual: R$ ${saldoTotal}`);
+     console.log("-----------------")
+}
+
+calcularSaldoAtual();
+
+
+function mostrarApenasDespessas(){
+    const despesas = historicoTransacoes.filter(transacao =>{
+        return transacao.valor < 0;
+    })
+
+    console.log("----valor de despessas----");
+    console.log(despesas);
+}
+
+mostrarApenasDespessas();
