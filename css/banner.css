@@ -1,0 +1,16 @@
+.banner{
+    display: flex;
+    justify-content: space-between;
+}
+.banner-img{
+    background-image: url(../images/PiggyCoinImg1.svg);
+    width: 350px;
+    height: 350px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    fill: #4cd080;       
+    stroke: #2d3142;     
+    stroke-width: 4px;
+}
