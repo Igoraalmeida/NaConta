@@ -1,16 +1,49 @@
 .banner{
     display: flex;
     justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+.middle-cloud, .left-cloud, .right-cloud{
+    background-image: url('/images/banner-cloud.png');
+    width: 600px;
+    height: 600px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.7;
+}
+.right-cloud{
+    left: 85%;
+    top: -10%;
+}
+.left-cloud{
+    right: 85%;
+    bottom: -3%;
+}
+.middle-cloud{
+    right: 45%;
+    bottom: -40%;
+}
+.banner-text{
+    font-size: 26px;
+    
 }
 .banner-img{
-    background-image: url(../images/PiggyCoinImg1.svg);
-    width: 350px;
-    height: 350px;
+    background-image: url(../images/banner-logo.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-
-    fill: #4cd080;       
-    stroke: #2d3142;     
-    stroke-width: 4px;
+    width: 650px;
+    height: 650px;
+    margin: 2% 3% -1.4% 0;   
+}
+.barcode-separator{
+    background-image: url("/images/banner-foot.png");
+    width: 100%;
+    height: 100px;
+    margin: 20px 0 0 0;
+    background-repeat: repeat-x;
+    background-size: contain;
 }
