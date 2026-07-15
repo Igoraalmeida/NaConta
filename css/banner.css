@@ -26,7 +26,7 @@
     top: -20%;
 }
 .left-cloud{
-    right: 85%;
+    right: 75%;
     bottom: -3%;
 }
 .middle-cloud{
@@ -42,6 +42,8 @@
     font-style: italic;
     
     align-self:flex-start;
+
+    color: rgb(54, 54, 54);
 }
 .banner-img{
     padding: 0% 6%; 
