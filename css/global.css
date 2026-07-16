@@ -1,8 +1,22 @@
-@import url('https://googleapis.com');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif; /* Ou a fonte que escolher */
+    font-family: 'Google Sans', sans-serif;
+}
+.clouds{
+    background-image: url('/images/banner-cloud.png');
+    width: 50rem;
+    height: 50rem;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+
+    z-index: -1;
+    opacity: 0.7;
+    pointer-events: none;
 }

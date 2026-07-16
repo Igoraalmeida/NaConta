@@ -1,13 +1,12 @@
 .navbar{
     display: flex;
-    padding: 1% 6%;
+    padding: 2.5% 7% 0% 7%;
 
     justify-content: space-between;
     align-items: center;
 }
 .navbar img{
-    width: 22rem;
-    margin-top: -10px;
+    width: 18rem;
 }
 .nav-list{
     display: flex;
@@ -21,14 +20,18 @@
 .nav-list a{
     text-decoration: none;
     color: inherit;
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
     cursor: pointer;
+}
+.nav-list li:nth-child(1):hover,
+.nav-list li:nth-child(2):hover{
+    color: #5ec57e;
 }
 
 .nav-list li:nth-child(3){
     padding: 20px 25px;
 
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: .2rem;

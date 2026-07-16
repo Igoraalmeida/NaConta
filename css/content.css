@@ -1,0 +1,35 @@
+.how-works{  
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    text-align: center;
+    padding: 8rem 6%;    
+}
+.how-works-title{
+    font-size: 3rem;
+    letter-spacing: .1rem;
+}
+.how-works-subtitle{
+    font-size: 1.5rem;
+    font-style: italic;
+}
+.cloud-4{
+    left: 75%;
+    top: 6%;
+}
+.cloud-5{
+    right: 75%;
+    top: 6%;
+}
+.cards{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10rem 6%;
+    gap: 2%;
+}
+.card{
+    border: 1px solid red;
+}
