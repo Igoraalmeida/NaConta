@@ -1,0 +1,172 @@
+.section-dashboard h4{
+    text-align: center;
+}
+.dashboard-mockup {
+  width: 100%;
+  max-width: 1000px; /* Tamanho compacto ideal para mockups */
+  max-height: 800px;
+  margin: 5rem auto;
+  background-color: #f8fafc;
+  border-radius: 16px;
+  padding: 1.50rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Sombra suave de flutuação */
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+}
+
+/* Header Compacto */
+.dash-mini-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  
+}
+
+.dash-greeting {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dash-sub {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 2px 0 0 0;
+}
+
+.dash-mini-btn {
+  background-color: #5ec57e; /* Seu verde padrão */
+  color: #ffffff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Cards em Miniatura */
+.dash-mini-cards {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.dash-mini-card {
+  flex: 1;
+  background: #ffffff;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dash-mini-card span {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+.dash-mini-card strong {
+  font-size: 1rem;
+}
+
+.dash-mini-card.dark {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+.dash-mini-card.dark span {
+  color: #94a3b8;
+}
+
+/* Utilitários de Cor */
+.green { color: #10b981; }
+.red { color: #ef4444; }
+
+/* Grid de Conteúdo */
+.dash-mini-grid {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.dash-mini-box {
+  flex: 1;
+  background: #ffffff;
+  padding: 0.85rem;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
+}
+
+.box-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 0.75rem;
+}
+
+/* Gráfico em Barras */
+.mini-chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 100px;
+}
+
+.chart-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.chart-col .bar {
+  width: 16px;
+  background-color: #5ec57e;
+  border-radius: 3px 3px 0 0;
+}
+
+.chart-col span {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+/* Lista de Transações */
+.mini-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mini-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #f8fafc;
+  font-size: 1rem;
+}
+
+.mini-list li:last-child {
+  border-bottom: none;
+}
+
+.mini-list strong {
+  display: block;
+  color: #334155;
+  font-size: 1rem;
+}
+
+.mini-list small {
+  font-size: 1rem;
+  color: #94a3b8;
+}
+.computer-img{
+    background-image: url("/images/computer-img.png");
+}
