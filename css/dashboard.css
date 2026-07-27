@@ -10,7 +10,7 @@
   border-radius: 16px;
   padding: 1.50rem;
   border: 1px solid #e2e8f0;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Sombra suave de flutuação */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.336); /* Sombra suave de flutuação */
   font-family: 'Inter', sans-serif;
   text-align: left;
 }

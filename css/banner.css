@@ -12,15 +12,15 @@
 
 .cloud-1{
     left: 85%;
-    top: -20%;
+    top: 0%;
 }
 .cloud-2{
     right: 75%;
-    bottom: -3%;
+    bottom: 10%;
 }
 .cloud-3{
-    right: 45%;
-    bottom: -50%;
+    right: 50%;
+    bottom: -30%;
 }
 .banner-text{
     width: 100%;
