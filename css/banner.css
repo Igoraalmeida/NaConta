@@ -39,16 +39,13 @@
     min-width: 50%;
     min-height: calc(100vh - 260px);
     
-    align-self: flex-end;
-    
-    margin-bottom: -1.25rem;
     position: relative;
     left: 5rem;
     
     background-image: url(../images/banner-logo.png);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center;  
+    background-position: bottom;  
 }
 .barcode-separator{
     background-image: url("/images/banner-foot.png");
@@ -56,4 +53,35 @@
     height: 7rem;
     background-repeat: repeat-x;
     background-size: contain;
+}
+
+
+
+
+/*Mobile Version*/
+@media screen and (max-width: 480px) {
+    .banner{
+    flex-direction: column; 
+    min-height: calc(100vh - 180px);
+    }
+    .banner-img{
+    min-width: 70%;
+    align-self: flex-end;
+    position: initial;
+    }
+    .cloud-1{
+        left: 70%;
+        top: 0%;
+    }
+    .cloud-2{
+        right: 60%;
+        top: 40%;
+    }
+    .cloud-3{
+        display: none;
+    }
+    .banner-text{
+        width: 70%;
+        font-size: 1.5rem;
+    }
 }

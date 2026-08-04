@@ -18,11 +18,11 @@
 }
 .cloud-4{
     left: 78%;
-    top: 18%;
+    top: 40%;
 }
 .cloud-5{
     right: 78%;
-    top: 18%;
+    top: 40%;
 }
 .cards{
     display: flex;
@@ -100,3 +100,50 @@
     top: 40%;
 }
 
+
+@media screen and (max-width: 480px) {
+    .cloud-4{
+    left: 78%;
+    top: 40%;
+    }
+    .cloud-5{
+        right: 78%;
+        top: 40%;
+        transform: scaleX(-1);
+    }
+    .how-works{  
+        gap: .5rem;
+        padding: 4rem 6%
+    }
+    .how-works-title{
+        font-size: 2rem;
+        letter-spacing: .01rem;
+    }
+    .how-works-subtitle{
+        font-size: 1.3rem;
+        font-style: italic;
+        padding: 0 10%;
+    }
+    .cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem 0%;
+    outline: 0px solid #5ec57e;
+    text-align: center;
+}
+.card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    width: 80%;
+    box-shadow: 50px 50px 200px 2px rgba(0, 0, 0, 0.158);
+}
+.card p{
+    max-width: 200px;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+}

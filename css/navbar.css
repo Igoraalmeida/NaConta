@@ -48,3 +48,27 @@
 
 
 
+/*Mobile Version*/
+@media screen and (max-width: 480px) {
+
+.navbar{
+    padding: 2%;
+    margin: 1.5rem;
+    border-bottom: 2px solid #5ec57e;
+    border-radius: 1rem;
+}
+.navbar img{
+    width: 8rem;
+}
+.nav-list{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 24px;
+    list-style: none;
+    font-size: 1rem;
+    
+}
+}
+
