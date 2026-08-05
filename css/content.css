@@ -132,18 +132,39 @@
     padding: 4rem 0%;
     outline: 0px solid #5ec57e;
     text-align: center;
-}
-.card{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5%;
-    width: 80%;
-    box-shadow: 50px 50px 200px 2px rgba(0, 0, 0, 0.158);
-}
-.card p{
-    max-width: 200px;
-    font-size: 1.1rem;
-    font-weight: 300;
-}
+    }   
+    .card{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5%;
+        width: 80%;
+        box-shadow: 50px 50px 200px 2px rgba(0, 0, 0, 0.158);
+    }
+    .card img{
+        width: 80px;
+    }
+    .card p{
+        max-width: 200px;
+        font-size: 1.1rem;
+        font-weight: 300;
+    }
+    .computer-img{    
+        width: 295px;
+        height: 200px;
+    }
+    .section-title{
+        font-size: 1.2em;
+        margin-top: 5rem;
+    }
+    .section-subtitle{
+        font-size: 1em;
+        padding: .3em;
+    }
+    .cloud-6{
+        top: 10%;
+    }
+    .cloud-7{
+        top: 50%;
+    }
 }

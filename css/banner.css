@@ -68,6 +68,7 @@
     min-width: 70%;
     align-self: flex-end;
     position: initial;
+    margin-right: -1rem;
     }
     .cloud-1{
         left: 70%;

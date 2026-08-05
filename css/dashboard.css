@@ -167,3 +167,53 @@
   font-size: 1rem;
   color: #94a3b8;
 }
+
+
+@media screen and (max-width: 480px){
+  .dashboard-mockup {
+  width: 100%;
+  max-width: 28rem;
+}
+.dash-greeting {
+  font-size: 1.2rem;
+}
+
+.dash-sub {
+  font-size: .8rem;
+}
+
+.dash-mini-btn {
+  font-size: .8rem;
+}
+.dash-mini-card span {
+  font-size: .8rem;
+  color: #64748b;
+}
+.dash-mini-card strong {
+  font-size: .8rem;
+}
+.box-title {
+  font-size: .8rem;
+}
+.mini-chart {
+  height: 180px;
+}
+.chart-col span {
+  font-size: .8rem;
+}
+.mini-list li {
+  font-size: .8rem;
+}
+
+.mini-list li:last-child {
+  border-bottom: none;
+}
+
+.mini-list strong {
+  font-size: .8rem;
+}
+
+.mini-list small {
+  font-size: .8rem;
+}
+}
