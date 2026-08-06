@@ -52,13 +52,20 @@
 @media screen and (max-width: 480px) {
 
 .navbar{
-    padding: 2%;
+    position: static;
+    padding: 5%;
     margin: 1.5rem;
     border-bottom: 2px solid #5ec57e;
     border-radius: 1rem;
 }
 .navbar img{
     width: 8rem;
+}
+.hide-nav-list{
+    display: none;
+}
+.nav-list.active, .hide-nav-list.active{
+    display: flex;
 }
 .nav-list{
     display: none;
@@ -67,8 +74,25 @@
 
     gap: 24px;
     list-style: none;
-    font-size: 1rem;
-    
+    font-size: 1rem;  
+}
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 1rem;
+  padding: 0 5%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  
+}
+.menu-btn .bar {
+  width: 28px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 }
 
