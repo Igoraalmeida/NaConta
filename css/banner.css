@@ -59,16 +59,16 @@
 
 
 /*Mobile Version*/
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
     .banner{
-    flex-direction: column; 
-    min-height: calc(100vh - 180px);
+        flex-direction: column; 
+        min-height: calc(100vh - 180px);
     }
     .banner-img{
-    min-width: 70%;
-    align-self: flex-end;
-    position: initial;
-    margin-right: -1rem;
+        min-width: 70%;
+        align-self: flex-end;
+        position: initial;
+        margin-right: -1rem;
     }
     .cloud-1{
         left: 70%;
@@ -82,6 +82,7 @@
         display: none;
     }
     .banner-text{
+        margin-top: 160px;
         width: 70%;
         font-size: 1.5rem;
     }

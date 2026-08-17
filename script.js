@@ -4,7 +4,6 @@ const hideNavList = document.querySelector('.hide-nav-list');
 
 // Quando clicar no botão, liga/desliga a classe "active"
 menuBtn.addEventListener('click', () => {
-  hideNavList.classList.toggle('active');
   navList.classList.toggle('active');
 });
 

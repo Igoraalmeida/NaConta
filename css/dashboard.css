@@ -1,3 +1,6 @@
+.section-dashboard{
+  overflow-x: hidden;
+}
 .section-dashboard h4{
     text-align: center;
 }
