@@ -2,11 +2,21 @@ const menuBtn = document.querySelector('.menu-btn');
 const navList = document.querySelector('.nav-list')
 const hideNavList = document.querySelector('.hide-nav-list');
 
-// Quando clicar no botão, liga/desliga a classe "active"
+const navbar = document.querySelector('.navbar');
+
+
 menuBtn.addEventListener('click', () => {
   navList.classList.toggle('active');
 });
 
+
+window.addEventListener('scroll', () => {
+    if (scrollY > 100){
+        navbar.classList.add('scrolled')
+    } else {
+        navbar.classList.remove('scrolled')
+    }
+})
 
 
 const historicoTransacoes = []

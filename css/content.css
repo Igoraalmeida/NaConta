@@ -186,6 +186,10 @@
         width: 80%;
         box-shadow: 50px 50px 200px 2px rgba(0, 0, 0, 0.158);
     }
+    .computer-img{
+        width: 310px;
+        height: 210px;
+    }
 }
 @media  screen and (max-width: 1300px) {
     .cards{
