@@ -11,7 +11,7 @@ menuBtn.addEventListener('click', () => {
 
 
 window.addEventListener('scroll', () => {
-    if (scrollY > 100){
+    if (scrollY > 150){
         navbar.classList.add('scrolled')
     } else {
         navbar.classList.remove('scrolled')
