@@ -1,6 +1,6 @@
-@import "Home/css/navbar.css";
-@import "Home/css/global.css";
-@import "Home/css/banner.css";
-@import "/Home/css/content.css";
-@import "/Home/css/dashboard.css";
+@import "navbar.css";
+@import "global.css";
+@import "banner.css";
+@import "content.css";
+@import "dashboard.css";
  
