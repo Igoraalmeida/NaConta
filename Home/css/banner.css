@@ -42,13 +42,13 @@
     position: relative;
     left: 5rem;
     
-    background-image: url(/images/banner-logo.png);
+    background-image: url(../images/banner-logo.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;  
 }
 .barcode-separator{
-    background-image: url("/images/banner-foot.png");
+    background-image: url("../images/banner-foot.png");
     width: 100%;
     height: 7rem;
     background-repeat: repeat-x;
