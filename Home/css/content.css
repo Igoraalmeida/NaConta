@@ -80,7 +80,7 @@
     padding: .3em;
 }
 .computer-img{
-    background-image: url("../images/computer-img.png");
+    background-image: url("/images/computer-img.png");
     background-size: contain;
     background-repeat: no-repeat;
     
