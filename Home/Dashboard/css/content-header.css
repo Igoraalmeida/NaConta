@@ -1,7 +1,11 @@
+body{
+    background-color: rgb(245, 245, 245);
+}
 .main-content{
     padding: 50px;
     box-sizing: border-box;
     height: 100vh;
+    background-color: rgb(245, 245, 245);
 }
 .content-header{
     display: flex;
@@ -48,7 +52,8 @@
     gap: 200px;
 }
 .cash-in, .cash-out, .cash-balance{
-    background-color: #11111125;
+    background-color: white;
+    border: 1px solid #E0E7E5;
     font-weight: 500;
     padding: 20px;
     border-radius: 20px;
@@ -74,7 +79,8 @@
     padding: 40px;
 }
 .month-balance-resume, .last-balance-resume{
-    background-color: #11111125;
+    background-color: white;
     padding: 30px;
     border-radius: 15px;
+    border: 1px solid #E0E7E5;
 }
