@@ -59,7 +59,7 @@
 .cash-in .value{
     color: #5ec57e;
 }
-.cash-out{
+.cash-out .value{
     color: #e62a2a;
 }
 .cash-balance{
