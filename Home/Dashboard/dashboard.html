@@ -3,88 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/c2a3c53385.js" crossorigin="anonymous"></script>
+    <title>NaConta Dashboard</title>
 </head>
 <body>
+
+    <!-- Container para dividir aside e conteúdo -->
+    <div class="dashboard-container">
+
     <aside class="sidebar">
         <header class="sidebar-header">
-            <a href="">
-                <img src="" alt="NaConta">
+            <a href="/index.html">
+                <img class="sidebar-logo" src="/images/Logo.png" alt="NaConta">
             </a>
         </header>
 
-        <nav class="sidebar-nav">
-            <ul class="nav-links">
-                <li>
-                    <a href="#">
-                        <img src="#">
-                        <span>Resumo</span>
-                    </a>
-                </li>
+            <nav class="sidebar-nav">
+                <ul class="nav-links">
+                    <li>
+                        <a href="#" class="active" data-target="secao-resumo">
+                            <i class="fa-solid fa-font-awesome" style="color: rgb(255, 255, 255);"></i>
+                            <span>Resumo</span>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="#">
-                        <img src="#">
-                        <span>Planilha</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="#" data-target="secao-planilha">
+                            <i class="fa-solid fa-file-lines" style="color: rgb(255, 255, 255);"></i>
+                            <span>Planilha</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
-                <li>
-                    <a href="/index.html">
-                        <img src="#">
-                        <span>Início</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+            <div class="sidebar-footer">
+               <a href="/index.html">
+                    <i class="fa-solid fa-person-walking-arrow-loop-left" style="color: rgb(255, 255, 255);"></i>
+                    <span>Início</span>
+                </a>
+            </div>
+        </header>
+    </aside>
 
-   <main class="content">
+   <main class="main-content">
     
-    
-    <header class="content-header">
-        
-        <div class="user-greeting">
-            <span class="current-date">Hora e data do dia</span>
-            <h1 class="user-name">Olá, Igor</h1>
-            <p class="subtitle">Resumo financeiro do mês</p>
-        </div>
-
-        <button class="butn-new-transaction">
-                <img src="#">
-                <span>Nova Transação</span>
-        </button>
-    </header>
-
-    <section class="container">
-        
-        <div class="cash-flow">
+    <section id="secao-resumo" class="tab-content active">
+        <header class="content-header">
             
-            <div class="cash-in">
-                <span class="label">Entradas</span>
-                <span class="value" id="Cash-in" >R$ 0,00</span>
+            <div class="user-greeting">
+                <span class="current-date">Hora e data do dia</span>
+                <h1 class="user-name">Olá, Igor</h1>
+                <p class="subtitle">Resumo financeiro do mês</p>
             </div>
-            <div class="cash-out">
-                <span class="label">Saídas</span>
-                <span class="value" id="Cash-out" >R$ 0,00</span>
-            </div>
-            <div class="cash-balance">
-                <span class="label">Saldo</span>
-                <span class="value" id="Cash-balance" >R$ 0,00</span>
-            </div>
-        </div>
 
-    <section class="balance-resumes">
-        <article class="month-balance-resume">
-            <h2>Resumo financeiro do mês</h2>
-        </article>
+            <button class="butn-new-transaction">
+                    <img src="#">
+                    <span>Nova Transação</span>
+            </button>
+        </header>
 
-        <article class="last-balance-resume">
-            <h2>Ultimas movimentações</h2>
-            <ul class="transactions-list" id="transactions-list"></ul>
-        </article>
+        <section class="container">
+            
+            <div class="cash-flow">
+                
+                <div class="cash-in">
+                    <span class="label">Entradas</span>
+                    <span class="value" id="Cash-in" >R$ 0,00</span>
+                </div>
+                <div class="cash-out">
+                    <span class="label">Saídas</span>
+                    <span class="value" id="Cash-out" >R$ 0,00</span>
+                </div>
+                <div class="cash-balance">
+                    <span class="label">Saldo</span>
+                    <span class="value" id="Cash-balance" >R$ 0,00</span>
+                </div>
+            </div>
+
+        <section class="balance-resumes">
+            <article class="month-balance-resume">
+                <h2>Resumo financeiro do mês</h2>
+            </article>
+
+            <article class="last-balance-resume">
+                <h2>Ultimas movimentações</h2>
+                <ul class="transactions-list" id="transactions-list"></ul>
+            </article>
+            </section>
+        </section>
     </section>
+
+    <section id="secao-planilha" class="tab-content">
+        <h1>Minha Planilha</h1>
+        <!-- Toda a tabela de receitas e despesas vem aqui -->
+    </section>
+
    </main>
 
+   </div>
+   <!-- fim do container para dividir -->
+
 </body>
+
+<script src="/Dashboard/script.js"></script>
 </html>
