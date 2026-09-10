@@ -1,0 +1,3 @@
+Botões: #0296A8
+subtítulos: #1111119a 
+fundo: rgb(245, 245, 245)

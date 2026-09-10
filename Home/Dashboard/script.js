@@ -2,26 +2,50 @@ const navLinks = document.querySelectorAll('.nav-links a[data-target]');
 const tabContents = document.querySelectorAll('.tab-content');
 const btnTransacao = document.querySelector('.btn-new-transaction')
 
-navLinks.forEach(link => {
-    link.addEventListener('click', (event) => {
-        event.preventDefault();
+const buttons = document.querySelectorAll('.btn-switch-section');
+const sections = document.querySelectorAll('.section');
 
-        navLinks.forEach(l => l.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
- 
-        link.classList.add('active');
+buttons.forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = button.dataset.target; // Pega "secao-planilha" ou "secao-resumo"
 
-        const targetId = link.getAttribute('data-target');
-        document.getElementById(targetId).classList.add('active');
-    });
+    // 1. Apaga tudo
+    sections.forEach(s => s.classList.remove('active'));
+    buttons.forEach(b => b.classList.remove('active'));
+
+    // 2. Mostra a seção clicada
+    document.getElementById(target).classList.add('active');
+
+    // 3. Acende TODOS os botões que vão para essa mesma seção
+    document.querySelectorAll(`[data-target="${target}"]`).forEach(b => b.classList.add('active'));
+  });
 });
 
-btnTransacao.addEventListener('click', () => {
+// troca as cores do transacrion form
+const typeButtons = document.querySelectorAll('.btn-type');
+const hiddenBtn = document.querySelector('#transaction-type');
+
+typeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+       typeButtons.forEach(btn => btn.classList.remove('active'));
+
+        button.classList.add('active');
+
+        hiddenBtn.value = button.dataset.type
+    })
+})
+
+const btnTransactionForm = document.querySelector('.btn-new-transaction-form');
+
+btnTransactionForm.addEventListener('click', (e)=>{
+    e.preventDefault();
     Swal.fire({
         title: 'Aviso',
         text: 'Construção em andamento...',
         icon: 'info',
         confirmButtonColor: '#5ec57e',
         confirmButtonText: 'Entendido'
-    });
-});
+    })
+
+})

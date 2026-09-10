@@ -1,0 +1,178 @@
+.planilha-cash-flow{
+    padding-left: 0;
+    padding-right: 0;
+}
+.transaction-section{
+    display: grid;
+    grid-template-columns: 67% 1fr;
+}
+.transaction-grid{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 10px;
+}
+.grid-header,
+.grid-row{
+    display: grid;
+    grid-template-columns: 100px 1.8fr 1.2fr 120px 100px;
+    align-items: center;
+
+    padding: 12px 0px;
+    border-radius: 6px;
+
+    border-bottom: 2px solid #f0f0f0;
+    font-size: 15px;
+}
+.grid-header{
+    padding: 10px 10px;
+    color: #1111119a;
+    font-weight: bold;
+    font-size: 15px;
+
+    background-color: rgb(245,245,245);
+    border-radius: 6px ;
+}
+.grid-row span{
+    padding: 0px 10px;
+}
+.grid-footer{
+    display: grid;
+    grid-template-columns: 100px 1fr 130px 100px;
+    padding: 12px 10px;
+    margin-top: auto;
+}
+.badge{
+    padding: 0px 0px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+
+}
+/* Cores das Pílulas */
+.category-work { background-color: #e3f2fd; color: #1976d2; }
+.category-food { background-color: #fff3e0; color: #f57c00; }
+
+.type-receipts { background-color: #e8f5e9; color: #2e7d32; }
+.type-expense { background-color: #ffebee; color: #c62828; }
+
+
+.text-right, .amount { text-align: right; }
+.text-center { text-align: center; }
+.description { font-weight: 600; }
+
+/* Transaction-form */
+.transaction-form-card{
+   display: flex;
+    flex-direction: column;
+}
+.transaction-form-card h2{
+    padding-bottom: 10px;
+}
+.transaction-form{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 16px;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.form-group label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1111119a;
+}
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+    background-color: #ffffff;
+    color: #333333;
+}
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #5ec57e;
+}
+.type-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.btn-type {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #1111119a;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-type.receipts.active {
+    background-color: #e8f5e9;
+    border-color: #5ec57e;
+    color: #2e7d32;
+}
+
+.btn-type.expense.active {
+    background-color: #ffebee;
+    border-color: #e53935;
+    color: #c62828;
+}
+
+
+
+
+
+
+
+
+
+
+.btn-new-transaction-form{
+    width: 100%;
+    margin-top: auto;
+}
+
+
+    /* MUDAR PARA A SEÇÃO CERTA MAIS TARDE */
+
+.section {
+    display: none;
+    opacity: 0;
+    transform: translateY(12px); /* Começa ligeiramente abaixo */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+/* 2. Estado quando a seção ganha a classe .active */
+.section.active {
+    display: grid; /* Mantenha o display que você já usa (grid ou block) */
+    opacity: 1;
+    transform: translateY(0); /* Sobe suavemente para a posição original */
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section.active {
+    animation: fadeIn 0.3s ease-in-out forwards;
+}

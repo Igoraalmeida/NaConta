@@ -24,14 +24,14 @@
             <nav class="sidebar-nav">
                 <ul class="nav-links">
                     <li>
-                        <a href="#" class="active" data-target="secao-resumo">
+                        <a href="#" class="active btn-switch-section" data-target="secao-resumo">
                             <i class="fa-solid fa-font-awesome" style="color: rgb(255, 255, 255);"></i>
                             <span>Resumo</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="#" data-target="secao-planilha">
+                        <a href="#" class="btn-switch-section" data-target="secao-planilha">
                             <i class="fa-solid fa-file-lines" style="color: rgb(255, 255, 255);"></i>
                             <span>Planilha</span>
                         </a>
@@ -49,17 +49,20 @@
     </aside>
 
    <main class="main-content">
-    
-    <section id="secao-resumo" class="tab-content active">
+
+    <!-- Tabela Resumo -->
+    <section id="secao-resumo" class="tab-content active section">
         <header class="content-header">
             
+            <div class="clouds"></div>
+
             <div class="user-greeting">
                 <span class="current-date">Hora e data do dia</span>
                 <h1 class="user-name">Olá, (Nome do usuário)</h1>
                 <p class="subtitle">Resumo financeiro do mês</p>
             </div>
 
-            <button class="btn-new-transaction">
+            <button class="btn-new-transaction btn-switch-section" data-target="secao-planilha">
                     <i class="fa-solid fa-plus" style="color: rgb(255, 255, 255);"></i>
                     <span>Nova Transação</span>
             </button>
@@ -92,11 +95,12 @@
                 <h2>Ultimas movimentações</h2>
                 <ul class="transactions-list" id="transactions-list"></ul>
             </article>
-            </section>
+        </section>
         </section>
     </section>
 
-    <section id="secao-planilha" class="tab-content">
+    <!-- Tabela Planilha -->
+    <section id="secao-planilha" class="tab-content section">
         <header class="content-header">
             
             <div class="user-greeting">
@@ -104,14 +108,113 @@
                 <h1 class="user-name">Olá, (Nome do usuário)</h1>
                 <p class="subtitle">Gerencie e adicione suas movimentações mensais</p>
             </div>
-
-            <!-- <button class="btn-new-transaction">
-                    <i class="fa-solid fa-plus" style="color: rgb(255, 255, 255);"></i>
-                    <span>Nova Transação</span>
-            </button> -->
         </header>
-        <!-- Toda a tabela de receitas e despesas vem aqui -->
-    </section>
+
+
+        
+        <div class="cash-flow planilha-cash-flow">
+                
+            <div class="cash-in total-receipts">
+                <span class="label">Total Receitas</span>
+                <span class="value" id="total-receipts-val" >R$ 0,00</span>
+            </div>
+            <div class="cash-out total-expenses">
+                <span class="label">Total Despesas</span>
+                <span class="value" id="total-expenses-val" >R$ 0,00</span>
+            </div>
+            <div class="cash-balance total-balance">
+                <span class="label">Saldo Atual</span>
+                <span class="value" id="Cash-balance-val" >R$ 0,00</span>
+            </div>
+        </div>
+
+        
+            <section class="balance-resumes transaction-section">
+                <article class="month-balance-resume transaction">
+                    <h2>Minhas Transações</h2>
+
+                    <div class="transaction-grid">
+                        <!-- cabeçalho -->
+                        <div class="grid-header">
+                            <span>Data</span>
+                            <span>Descrição</span>
+                            <span>Categoria</span>
+                            <span class="text-right">Valor</span>
+                            <span class="text-center">Tipo</span>
+                        </div>
+                        <!-- linha de transação -->
+                        <div class="grid-row">
+                            <span class="date">25/06/2025</span>
+                            <span class="description">Salário Mensal</span>
+                            <span><span class="badge category-work">Trabalho</span></span>
+                            <span class="amount val-receipts">R$ 8.500,00</span>
+                            <span class="text-center"><span class="badge type-receipts">Receita</span></span>
+                        </div>
+                        <!-- Rodapé -->
+                        <div class="grid-footer">
+                            <strong>Total Geral</strong>
+                            <span class="subtext">9 lançamentos consolidados</span>
+                            <strong class="amount">R$ 6.799,50</strong>
+                            <span class="badge type-receipts text-center">LÍQUIDO</span>
+                        </div>
+                    </div>
+                </article>
+        
+                <article class="last-balance-resume transaction-form-card">
+                    <h2>Nova Transação</h2>
+
+                    <form class="transaction-form">
+                        <!-- Data -->
+                        <div class="form-group">
+                            <label for="transaction-date">Data</label>
+                            <input type="date" id="transaction-date" required>
+                        </div>
+
+                        <!-- Descrição -->
+                        <div class="form-group">
+                            <label for="transaction-description">Descrição</label>
+                            <input type="text" id="transaction-description" placeholder="Ex: Supermercado" required>
+                        </div>
+                    
+                        <!-- Categoria -->
+                        <div class="form-group">
+                            <label for="transaction-category">Categoria</label>
+                            <select id="transaction-category" required>
+                                <option value="" disabled selected>Selecione...</option>
+                                <option value="Trabalho">Trabalho</option>
+                                <option value="Alimentação">Alimentação</option>
+                                <option value="Moradia">Moradia</option>
+                                <option value="Transporte">Transporte</option>
+                                <option value="Assinaturas">Assinaturas</option>
+                            </select>
+                        </div>
+
+                        <!-- Valor -->
+                        <div class="form-group">
+                            <label for="transaction-amount">Valor</label>
+                            <input type="number" id="transaction-amount" step="0.01" placeholder="R$ 0,00" required>
+                        </div>
+
+                        <!-- Tipo (Receita / Despesa) -->
+                        <div class="form-group">
+                        <label>Tipo</label>
+                        <div class="type-selector">
+                            <button type="button" class="btn-type receipts active" data-type="income">Receita</button>
+                            <button type="button" class="btn-type expense" data-type="expense">Despesa</button>
+                        </div>
+                            <input type="hidden" id="transaction-type" value="income">
+                        </div>                 
+                    
+                    <button class="btn-new-transaction btn-new-transaction-form">
+                        <i class="fa-solid fa-plus" style="color: rgb(255, 255, 255);"></i>
+                        <span>Adicionar</span>
+                    </button>
+                    </form>
+                </article>
+            </section>
+        </section>
+       
+    
 
    </main>
 

@@ -1,2 +1,5 @@
 @import "sidebar.css";
-@import "content-header.css"
+@import "resumo-content-header.css";
+@import "resumo-main-content.css";
+@import "planilha-content-header.css";
+@import "planilha-main-content.css";
