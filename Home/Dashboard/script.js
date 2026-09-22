@@ -49,3 +49,35 @@ btnTransactionForm.addEventListener('click', (e)=>{
     })
 
 })
+
+
+/**
+ * Nova Transação
+ */
+
+/* Mapeamento dos Elementos do DOM */
+const transactionForm = document.querySelector('.transaction-form');
+const transactionsContainer = document.querySelector('.grid-body');
+
+/* Inputs */
+const transactionDate = document.querySelector('.transaction-date');
+const transactionDescription = document.querySelector('.transaction-description');
+const transactionCategory = document.querySelector('.transaction-category');
+const transactionAmount = document.querySelector('.transaction-amount');
+
+/* Botões do Seletor de Tipo */
+const typeSelectorButton = document.querySelectorAll('.type-selector .btn-type');
+
+
+let transaction = [];
+
+const newTransactions = {
+  id: Date.now(),
+  Date: transactionDate.value,
+  description: transactionDescription.value,
+  category: transactionCategory.value,
+  amount: Number(transactionAmount.value),
+  type: activeTypeButton.dataset.type
+};
+
+transactionsContainer.push(newTransactions);

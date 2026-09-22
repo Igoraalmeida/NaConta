@@ -9,6 +9,7 @@
 }
 html{
     scroll-behavior: smooth;
+    background-color: rgb(245,245,245);
 }
 .clouds{
     background-image: url('/../../images/banner-cloud.png');
