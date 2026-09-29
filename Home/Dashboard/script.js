@@ -1,6 +1,6 @@
 const navLinks = document.querySelectorAll('.nav-links a[data-target]');
 const tabContents = document.querySelectorAll('.tab-content');
-const btnTransacao = document.querySelector('.btn-new-transaction')
+const btnTransacao = document.querySelector('.btn-new-transaction');
 
 const buttons = document.querySelectorAll('.btn-switch-section');
 const sections = document.querySelectorAll('.section');
@@ -22,34 +22,21 @@ buttons.forEach(button => {
   });
 });
 
-// troca as cores do transacrion form
+// troca as cores do transaction form
 const typeButtons = document.querySelectorAll('.btn-type');
 const hiddenBtn = document.querySelector('#transaction-type');
 
 typeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-       typeButtons.forEach(btn => btn.classList.remove('active'));
+  button.addEventListener('click', () => {
+    typeButtons.forEach(btn => btn.classList.remove('active'));
 
-        button.classList.add('active');
+    button.classList.add('active');
 
-        hiddenBtn.value = button.dataset.type
-    })
-})
+    hiddenBtn.value = button.dataset.type;
+  });
+});
 
 const btnTransactionForm = document.querySelector('.btn-new-transaction-form');
-
-btnTransactionForm.addEventListener('click', (e)=>{
-    e.preventDefault();
-    Swal.fire({
-        title: 'Aviso',
-        text: 'Construção em andamento...',
-        icon: 'info',
-        confirmButtonColor: '#5ec57e',
-        confirmButtonText: 'Entendido'
-    })
-
-})
-
 
 /**
  * Nova Transação
@@ -60,24 +47,98 @@ const transactionForm = document.querySelector('.transaction-form');
 const transactionsContainer = document.querySelector('.grid-body');
 
 /* Inputs */
-const transactionDate = document.querySelector('.transaction-date');
-const transactionDescription = document.querySelector('.transaction-description');
-const transactionCategory = document.querySelector('.transaction-category');
-const transactionAmount = document.querySelector('.transaction-amount');
+const transactionDate = document.querySelector('#transaction-date');
+const transactionDescription = document.querySelector('#transaction-description');
+const transactionCategory = document.querySelector('#transaction-category');
+const transactionAmount = document.querySelector('#transaction-amount');
 
 /* Botões do Seletor de Tipo */
 const typeSelectorButton = document.querySelectorAll('.type-selector .btn-type');
 
-
 let transaction = [];
 
-const newTransactions = {
-  id: Date.now(),
-  Date: transactionDate.value,
-  description: transactionDescription.value,
-  category: transactionCategory.value,
-  amount: Number(transactionAmount.value),
-  type: activeTypeButton.dataset.type
-};
+function renderTransactions() {  
+  // 1. Limpa o container para redesenhar a lista atualizada
+  transactionsContainer.innerHTML = '';
+  // 2. Passa por cada transação que está dentro do vetor
+  transaction.forEach(item => {
+    
+    // 1. Se for 'income', o texto é "Receita", senão é "Despesa"
+    const typeText = item.type === 'income' ? 'Receita' : 'Despesa';
 
-transactionsContainer.push(newTransactions);
+    // 2. Se for 'income', a classe CSS é 'type-receipts' (verde), senão é 'type-expense' (vermelho)
+    const typeBadgeClass = item.type === 'income' ? 'type-receipts' : 'type-expense';
+
+    // 3. Monta o HTML da linha com os dados da transação
+    const row = `
+      <div class="grid-row">
+        <span class="date">${item.Date}</span>
+        <span class="description">${item.description}</span>
+        <span><span class="badge" data-category="${item.category}">${item.category}</span></span>
+        <span class="amount">R$ ${item.amount}</span>
+        <span class="text-center"><span class="badge ${typeBadgeClass}">${typeText}</span></span>
+      </div>
+    `;
+    // 4. Adiciona a linha dentro do container
+    transactionsContainer.innerHTML += row;
+  });
+}
+
+// Total de Transações (Elementos do Rodapé)
+const totalTransactionCount = document.querySelector('#total-transaction-count');
+const totalGeneralAmount = document.querySelector('#total-general-amount');
+
+function updateFooterTotal() {
+  const total = transaction.reduce((acc, item) => {
+    if (item.type === 'income') {
+      return acc + item.amount;
+    } else {
+      return acc - item.amount;
+    }
+  }, 0);
+
+  if (totalGeneralAmount) {
+    totalGeneralAmount.textContent = total.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    });
+  }
+
+  if (totalTransactionCount) {
+    totalTransactionCount.textContent = `${transaction.length} lançamentos consolidados`;
+  }
+}
+
+/* Evento de envio do formulário */
+transactionForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const newTransactions = {
+    id: Date.now(),
+    Date: transactionDate.value,
+    description: transactionDescription.value,
+    category: transactionCategory.value,
+    amount: Number(transactionAmount.value),
+    type: hiddenBtn.value || 'income' // Garantia de ter um tipo padrão se nada for clicado
+  };
+
+  transaction.push(newTransactions);
+
+  renderTransactions();
+  updateFooterTotal();
+
+  console.log('Transações atualizadas:', transaction);
+
+  Swal.fire({
+    title: 'Sucesso!',
+    text: 'Transação adicionada com sucesso.',
+    icon: 'success',
+    confirmButtonColor: '#5ec57e',
+    confirmButtonText: 'OK'
+  });
+ 
+  transactionForm.reset();
+});
+
+// Execução inicial para atualizar a tela no carregamento da página
+updateFooterTotal();

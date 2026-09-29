@@ -15,10 +15,10 @@
 .grid-header,
 .grid-row{
     display: grid;
-    grid-template-columns: 100px 1.8fr 1.2fr 120px 100px;
+    grid-template-columns: 110px 1.8fr 1.2fr 120px 100px;
     align-items: center;
 
-    padding: 12px 0px;
+    padding: 12px 10px;
     border-radius: 6px;
 
     border-bottom: 2px solid #f0f0f0;
@@ -34,7 +34,7 @@
     border-radius: 6px ;
 }
 .grid-row span{
-    padding: 0px 10px;
+    /* padding: 0px 10px; */
 }
 .grid-footer{
     display: grid;
@@ -51,8 +51,12 @@
 
 }
 /* Cores das Pílulas */
-.category-work { background-color: #e3f2fd; color: #1976d2; }
-.category-food { background-color: #fff3e0; color: #f57c00; }
+.badge[data-category="Trabalho"] { background-color: #e3f2fd; color: #1976d2; }
+.badge[data-category="Alimentação"] { background-color: #fff3e0; color: #f57c00; }
+.badge[data-category="Moradia"] { background-color: #f3e5f5; color: #7b1fa2; }
+.badge[data-category="Transporte"] { background-color: #e0f2f1; color: #00796b; }
+.badge[data-category="Assinaturas"] { background-color: #ede7f6; color: #512da8; }
+
 
 .type-receipts { background-color: #e8f5e9; color: #2e7d32; }
 .type-expense { background-color: #ffebee; color: #c62828; }
