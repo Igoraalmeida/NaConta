@@ -58,47 +58,71 @@ const typeSelectorButton = document.querySelectorAll('.type-selector .btn-type')
 let transaction = [];
 
 function renderTransactions() {  
-  // 1. Limpa o container para redesenhar a lista atualizada
+
   transactionsContainer.innerHTML = '';
-  // 2. Passa por cada transação que está dentro do vetor
+
   transaction.forEach(item => {
     
-    // 1. Se for 'income', o texto é "Receita", senão é "Despesa"
-    const typeText = item.type === 'income' ? 'Receita' : 'Despesa';
+  const typeText = item.type === 'income' ? 'Receita' : 'Despesa';
+  const typeBadgeClass = item.type === 'income' ? 'type-receipts' : 'type-expense';
 
-    // 2. Se for 'income', a classe CSS é 'type-receipts' (verde), senão é 'type-expense' (vermelho)
-    const typeBadgeClass = item.type === 'income' ? 'type-receipts' : 'type-expense';
+  const formattedAmount = item.amount.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+  });
 
-    // 3. Monta o HTML da linha com os dados da transação
-    const row = `
+  // Formatação da Data
+  const [year, month, day] = item.Date.split('-');
+  const formattedDate = item.Date ? `${day}/${month}/${year}` : '-';
+
+  const row = `
       <div class="grid-row">
-        <span class="date">${item.Date}</span>
+        <span class="date">${formattedDate}</span>
         <span class="description">${item.description}</span>
         <span><span class="badge" data-category="${item.category}">${item.category}</span></span>
-        <span class="amount">R$ ${item.amount}</span>
+        <span class="amount">${formattedAmount}</span>
         <span class="text-center"><span class="badge ${typeBadgeClass}">${typeText}</span></span>
+       
       </div>
     `;
-    // 4. Adiciona a linha dentro do container
+    // Adiciona a linha dentro do container
     transactionsContainer.innerHTML += row;
   });
 }
 
+// Total de Transações (Elementos do Display)
+const totalExpensesVal = document.querySelector('#total-expenses-val');
+const totalReceiptsVal = document.querySelector('#total-receipts-val');
 // Total de Transações (Elementos do Rodapé)
 const totalTransactionCount = document.querySelector('#total-transaction-count');
 const totalGeneralAmount = document.querySelector('#total-general-amount');
+// Saldo Atual
+const cashBalanceVal = document.querySelector('#Cash-balance-val');
 
-function updateFooterTotal() {
+// função para atualizar o total de transações e o saldo
+function updateTotals() {
   const total = transaction.reduce((acc, item) => {
     if (item.type === 'income') {
+      totalReceiptsVal.textContent = item.amount.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+      });
       return acc + item.amount;
     } else {
+      totalExpensesVal.textContent = item.amount.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+      });
       return acc - item.amount;
     }
   }, 0);
 
-  if (totalGeneralAmount) {
+  if (totalGeneralAmount && cashBalanceVal) {
     totalGeneralAmount.textContent = total.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    });
+    cashBalanceVal.textContent = total.toLocaleString('pt-BR', {
       style: 'currency',
       currency: 'BRL'
     });
@@ -118,14 +142,14 @@ transactionForm.addEventListener('submit', (e) => {
     Date: transactionDate.value,
     description: transactionDescription.value,
     category: transactionCategory.value,
-    amount: Number(transactionAmount.value),
+    amount: Math.abs(Number(transactionAmount.value)),
     type: hiddenBtn.value || 'income' // Garantia de ter um tipo padrão se nada for clicado
   };
 
   transaction.push(newTransactions);
 
   renderTransactions();
-  updateFooterTotal();
+  updateTotals();
 
   console.log('Transações atualizadas:', transaction);
 
